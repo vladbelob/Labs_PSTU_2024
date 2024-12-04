@@ -2,12 +2,12 @@
 #include <string>
 using namespace std;
 int main() {
-    string n;
-    int sm;
+    int n, sm=0;
     cin >> n;
     sm=0;
-    for (int i=0;i<n.length();i++) {    
-        sm+=(int)n[i]-48;
+    while (n > 0) {
+        sm += n % 10;
+        n /= 10;
     }
     cout << sm << endl;
     return 0;
