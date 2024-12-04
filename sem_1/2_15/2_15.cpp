@@ -2,16 +2,17 @@
 #include <string>
 using namespace std;
 int main() {
-    string n;
-    int s;
-    bool vh;
+    int n, s, k;
+    bool fl = false;
     cin >> n >> s;
-    for (int i=0;i<n.length();i++) {    
-        if ((int)n[i]-48 == s) {
-            vh=true;
+    while (n > 0 && !fl) {
+        k = n % 10;
+        if (k == s) {
+            fl = true;
+            cout << "Цифра входит в состав числа n" << endl;
         }
+        else { n /= 10; }
     }
-    if (vh==true){cout << "число s входит в состав числа n"<< endl;}
-    else {cout << "число s не входит в состав числа n"<< endl;}
+    if (!fl) { cout << "Цифра не входит в состав числа n" << endl; }
     return 0;
 }
